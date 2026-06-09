@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رستوران دالاترا | Dalatra Restaurant</title>
+    
+    <!-- Google Fonts (Vazirmatn is great for Persian) -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;400;700&display=swap" rel="stylesheet">
+    <!-- AOS Library for Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #e67e22;
+            --secondary: #2c3e50;
+            --glass: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --text-light: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); /* Placeholder High Quality Food Image */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+
+        /* --- Glassmorphism Card Style --- */
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        /* --- Section Styling --- */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary);
+        }
+
+        /* --- Info Section --- */
+        .info-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .info-item {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .info-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .info-item i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* --- Menu Grid --- */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-item {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .menu-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .menu-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .price-tag {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 50px;
+            background: rgba(0,0,0,0.3);
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            section { padding: 60px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1 data-aos="zoom-in" data-aos-duration="1500">رستوران دالاترا</h1>
+        <p data-aos="fade-up" data-aos-delay="500">تجربه‌ای متفاوت از طعم‌های اصیل</p>
+    </div>
+
+    <!-- Info Section -->
+    <section id="info">
+        <h2 class="section-title" data-aos="fade-up">اطلاعات تماس و آدرس</h2>
+        <div class="info-container">
+            <div class="glass-card info-item" data-aos="fade-right" data-aos-delay="100">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>آدرس</h3>
+                <p>تهران، میدان هدایت، No. 21</p>
+            </div>
+            <div class="glass-card info-item" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-phone"></i>
+                <h3>تماس</h3>
+                <p>021 2665 0665</p>
+            </div>
+            <div class="glass-card info-item" data-aos="fade-left" data-aos-delay="300">
+                <i class="fas fa-star"></i>
+                <h3>امتیاز</h3>
+                <p>4.1 از 5 (۱۴۶ نظر)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2 class="section-title" data-aos="fade-up">برگزیده‌های منو</h2>
+        <div class="menu-grid">
+            
+            <!-- Item 1 -->
+            <div class="glass-card menu-item" data-aos="flip-left">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80" alt="Steak">
+                <div class="menu-content">
+                    <h3>Ribeye Steak</h3>
+                    <p class="price-tag">پرطرفدار</p>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="glass-card menu-item" data-aos="flip-left" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1550304943-4f24f54ddde9?auto=format&fit=crop&w=500&q=80" alt="Salad">
+                <div class="menu-content">
+                    <h3>Caesar Salad</h3>
+                    <p class="price-tag">تازه و خوشمزه</p>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="glass-card menu-item" data-aos="flip-left" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1573333201921-57286977a59a?auto=format&fit=crop&w=500&q=80" alt="Pizza">
+                <div class="menu-content">
+                    <h3>Steak Pizza</h3>
+                    <p class="price-tag">ترکیبی خاص</p>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="glass-card menu-item" data-aos="flip-left" data-aos-delay="300">
+                <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=500&q=80" alt="Dessert">
+                <div class="menu-content">
+                    <h3>Brownies Cakes</h3>
+                    <p class="price-tag">شکلات غلیظ</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© ۲۰۲۶ رستوران دالاترا | طراحی شده با ❤️</p>
+    </footer>
+
+    <!-- AOS Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animations
+        AOS.init({
+            duration: 1000, // Animation duration in ms
+            once: false,    // whether animation should happen only once - while scrolling down
+            mirror: true,   // whether elements should animate out while scrolling past them
+        });
+    </script>
+</body>
+</html>
